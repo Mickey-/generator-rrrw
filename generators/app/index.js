@@ -5,7 +5,6 @@ var yosay = require('yosay');
 
 module.exports = yeoman.Base.extend({
   initializing: function() {
-    this.data = {}
     this.log.ok(this.templatePath('./'))
     this.log.ok(this.destinationPath())
   },
@@ -29,13 +28,22 @@ module.exports = yeoman.Base.extend({
   },
 
   writing: function () {
-    this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
+    this.fs.copyTpl(
+      this.templatePath('package.json'),
+      this.destinationPath(),
+      this.props
     );
+    this.directory(
+      this.templatePath('client/'),
+      this.destinationPath()
+    );
+    this.fs.copy(
+      this.templatePath('webpack.config.js'),
+      this.destinationPath('webpack.config.js')
+    )
   },
 
   install: function () {
-    this.installDependencies();
+    this.npmInstall();
   }
 });
