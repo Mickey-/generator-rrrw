@@ -1,7 +1,7 @@
 {
   "name": "generator-rrrw",
   "version": "0.0.0",
-  "description": "react+redux+react-redux-router+webpack(with babel,es6)",
+  "description": "react,redux,react-redux-router,webpack,babel,es6,autoprefixer,hmr,css-module",
   "homepage": "https://github.com/Mickey-/generator-rrrw",
   "author": {
     "name": "Mickey-",
@@ -22,7 +22,7 @@
   "dependencies": {
     "yeoman-generator": "^0.23.0",
     "chalk": "^1.0.0",
-    "yosay": "^1.0.0"
+    "yosay": "~1.1.1"
   },
   "devDependencies": {
     "yeoman-test": "^1.0.0",

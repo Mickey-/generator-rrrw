@@ -1,15 +1,14 @@
 {
-  "name": "frontend-boilerplate",
+  "name": "rrrw for <%= product %>",
   "version": "1.0.0",
   "private": true,
-  "description": "A boilerplate of things that shouldn't exist",
+  "description": "it builds with react,redux,react-redux-router,webpack,babel,es6,autoprefixer,hmr,css-module etc",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
     "build": "NODE_ENV=production webpack --progress --colors"
   },
-  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.5.2",
     "babel-loader": "^6.2.3",
