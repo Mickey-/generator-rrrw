@@ -17,7 +17,11 @@
     "react",
     "redux",
     "react-redux",
-    "react-router-redux"
+    "react-router-redux",
+    "webpack",
+    "css-module",
+    "es6",
+    "hmr"
   ],
   "dependencies": {
     "yeoman-generator": "^0.23.0",
