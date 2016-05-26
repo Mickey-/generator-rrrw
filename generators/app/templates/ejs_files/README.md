@@ -33,7 +33,7 @@ src/
 - [x] [CSS modules](https://github.com/outpunk/postcss-modules)
 - [x] [Rucksack](http://simplaio.github.io/rucksack/docs)
 - [x] TodoMVC 示例
-- [ ] 还有哪些你认为有价值的？随时联系@半边
+- [ ] 还有哪些你认为有价值的优化点？随时联系@半边
 
 ## 安装(如果还需要的话)
 
