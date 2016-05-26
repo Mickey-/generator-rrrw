@@ -1,15 +1,16 @@
 {
-  "name": "rrrw for <%= repo %>",
-  "version": "1.0.0",
+  "name": "<%= repo %>",
+  "version": "0.0.1",
   "private": true,
   "description": "it builds with react,redux,react-redux-router,webpack,babel,es6,autoprefixer,hmr,css-module etc",
   "main": "index.js",
+  "repository": "git@code.59store.com:fe/rrrw.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 5959",
     "build": "NODE_ENV=production webpack --progress --colors"
   },
-  "devDependencies": {
+  "dependencies": {
     "babel-core": "^6.5.2",
     "babel-loader": "^6.2.3",
     "babel-plugin-transform-runtime": "^6.5.2",
@@ -34,5 +35,6 @@
     "react-router-redux": "^4.0.0",
     "redux": "^3.3.1",
     "redux-actions": "^0.9.1"
-  }
+  },
+  "license": "Apache-2.0"
 }

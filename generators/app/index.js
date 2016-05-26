@@ -6,20 +6,18 @@ var fs = require('fs');
 
 module.exports = yeoman.Base.extend({
   initializing: function() {
-    this.log.ok(this.templatePath('./'))
-    this.log.ok(this.destinationPath())
-  },
-
-  prompting: function () {
-    // Have Yeoman greet the user.
     this.log(yosay(
       'Welcome to ' + chalk.cyan('59store rrrw generator') + ', it builds with ' + chalk.red('react,redux,react-redux-router,webpack,babel,es6,autoprefixer,hmr,css-module   ') + 'and so on'
     ));
 
+  },
+
+  prompting: function () {
+    // Have Yeoman greet the user.
     var prompts = [{
       type    : 'input',
       name    : 'repo',
-      message : '请输入项目仓库名称',
+      message : '请输入仓库名称(不能有空格和大写字母)',
       default : this.env.cwd.split('/').pop() // Default 当前目录名
     }, {
       type    : 'input',
@@ -78,5 +76,8 @@ module.exports = yeoman.Base.extend({
 
   install: function () {
     this.npmInstall();
+    this.on('end', function(){
+      this.log.ok('React工程初始化完成，你可以执行' + chalk.green(' npm start ') + '开启dev server 查看示例')
+    })
   }
 });

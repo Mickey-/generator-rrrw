@@ -1,11 +1,11 @@
-/.project
+static
 
 node_modules
 # Numerous always-ignore extensions
 *.diff
 *.err
 *.orig
-*.log
+*.log*
 *.rej
 *.swo
 *.swp
