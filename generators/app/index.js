@@ -4,21 +4,26 @@ var chalk = require('chalk');
 var yosay = require('yosay');
 
 module.exports = yeoman.Base.extend({
+  initializing: function() {
+    this.data = {}
+    this.log.ok(this.templatePath('./'))
+    this.log.ok(this.destinationPath())
+  },
+
   prompting: function () {
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the kryptonian ' + chalk.red('generator-rrrw') + ' generator!'
+      'Welcome to 59store rrrw generator, it builds with' + chalk.red('react,redux,react-redux-router,webpack,babel,es6,autoprefixer,hmr,css-module')'
     ));
 
     var prompts = [{
-      type: 'confirm',
-      name: 'someAnswer',
-      message: 'Would you like to enable this option?',
-      default: true
+      type    : 'input',
+      name    : 'product',
+      message : '请输入项目仓库名称',
+      default : this.env.cwd.split('/').pop() // Default 当前目录名
     }];
 
     return this.prompt(prompts).then(function (props) {
-      // To access props later use this.props.someAnswer;
       this.props = props;
     }.bind(this));
   },
