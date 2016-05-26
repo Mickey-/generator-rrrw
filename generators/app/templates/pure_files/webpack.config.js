@@ -1,5 +1,6 @@
-var rucksack = require('rucksack-css')
 var webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var autoprefixer = require('autoprefixer');
 var path = require('path')
 
 module.exports = {
@@ -17,7 +18,7 @@ module.exports = {
     ]
   },
   output: {
-    path: path.join(__dirname, './static'),
+    path: path.join(__dirname, './dist'),
     filename: 'main.js',
   },
   module: {
@@ -29,11 +30,7 @@ module.exports = {
       {
         test: /\.css$/,
         include: /src/,
-        loaders: [
-          'style-loader',
-          'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-          'postcss-loader'
-        ]
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&minimize&importLoaders=1&localIdentName=[local]___[hash:base64:5]!postcss-loader')
       },
       {
         test: /\.css$/,
@@ -54,12 +51,13 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   postcss: [
-    rucksack({
-      autoprefixer: true
+    autoprefixer({
+      browsers: [ 'Android >= 4', 'iOS > 6', 'last 10 Chrome versions', 'last 4 Firefox versions', 'Safari >= 6', 'ie > 8' ]
     })
   ],
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('lib', 'lib.js'),
+    new ExtractTextPlugin("main.css"),
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
     })
