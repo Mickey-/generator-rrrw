@@ -7,8 +7,7 @@ var webpack = require('webpack'),
 module.exports = {
   context: path.join(__dirname, './src'),
   entry: {
-    jsx: './index.js',
-    html: './index.html',
+    app: './index.js',
     lib: [
       'react',
       'react-dom',
@@ -20,23 +19,13 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, './dist'),
-    filename: 'main.js',
+    filename: 'bundle.[hash:5].js',
   },
   module: {
     loaders: [
       {
-        test: /\.html$/,
-        loader: 'file?name=[name].[ext]'
-      },
-      {
         test: /\.css$/,
-        include: /src/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&minimize&importLoaders=1&localIdentName=[local]___[hash:base64:5]!postcss-loader')
-      },
-      {
-        test: /\.css$/,
-        exclude: /src/,
-        loader: 'style!css'
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[local]__[hash:base64:5]!postcss-loader')
       },
       {
         test: /\.(js|jsx)$/,
@@ -59,14 +48,18 @@ module.exports = {
     })
   ],
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('lib', 'lib.js'),
-    new ExtractTextPlugin("main.css"),
+    new webpack.optimize.CommonsChunkPlugin('lib', 'lib.[hash:5].js'),
+    new ExtractTextPlugin("bundle.[hash:5].css"),
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
     }),
-    new HtmlWebpackPlugin({minify:{}})
+    new HtmlWebpackPlugin({
+      //minify:{}
+      template: './index.html'
+    })
   ],
   devServer: {
+    stats: { chunks:false },
     contentBase: './src',
     hot: true
   }

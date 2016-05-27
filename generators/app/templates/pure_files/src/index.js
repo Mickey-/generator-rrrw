@@ -1,3 +1,4 @@
+import 'normalize.css/normalize.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, browserHistory } from 'react-router'
@@ -6,9 +7,9 @@ import { Provider } from 'react-redux'
 
 import Header from './components/Header'
 import App from './containers/App'
-import configure from './store'
+import createStore from './store'
 
-const store = configure()
+const store = createStore()
 const history = syncHistoryWithStore(browserHistory, store)
 
 ReactDOM.render(
