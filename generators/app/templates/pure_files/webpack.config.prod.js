@@ -19,13 +19,13 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, './dist'),
-    filename: 'bundle.js',
+    filename: 'bundle.[hash:5].js',
   },
   module: {
     loaders: [
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[local]__[hash:base64:5]!postcss-loader')
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&minimize&importLoaders=1&localIdentName=[local]__[hash:base64:5]!postcss-loader')
       },
       {
         test: /\.(js|jsx)$/,
@@ -48,18 +48,22 @@ module.exports = {
     })
   ],
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('lib', 'lib.js'),
-    new ExtractTextPlugin("bundle.css"),
+    new webpack.optimize.CommonsChunkPlugin('lib', 'lib.[hash:5].js'),
+    new ExtractTextPlugin("bundle.[hash:5].css"),
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
     }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: false,
+      unused: true,
+      dead_code: true,
+      warnings: false
+    }),
     new HtmlWebpackPlugin({
+      minify: {},
       template: './index.html'
     })
-  ],
-  devServer: {
-    stats: { chunks:false },
-    contentBase: './src',
-    hot: true
-  }
+  ]
 }
