@@ -1,12 +1,4 @@
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
 button {
-  margin: 0;
   padding: 0;
   border: 0;
   background: none;
@@ -15,7 +7,6 @@ button {
   font-family: inherit;
   font-weight: inherit;
   color: inherit;
-  appearance: none;
   font-smoothing: antialiased;
 }
 

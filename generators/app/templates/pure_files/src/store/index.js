@@ -4,7 +4,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { logger } from '../middleware'
 import rootReducer from '../reducers'
 
-export default function configure(initialState) {
+export default function createStore(initialState) {
   const create = window.devToolsExtension
     ? window.devToolsExtension()(createStore)
     : createStore
