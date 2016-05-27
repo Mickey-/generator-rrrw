@@ -1,7 +1,8 @@
-var webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var autoprefixer = require('autoprefixer');
-var path = require('path')
+var webpack = require('webpack'),
+  ExtractTextPlugin = require('extract-text-webpack-plugin'),
+  autoprefixer = require('autoprefixer'),
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
+  path = require('path')
 
 module.exports = {
   context: path.join(__dirname, './src'),
@@ -45,6 +46,8 @@ module.exports = {
           'babel-loader'
         ]
       },
+      {test: /\.json$/, loader: 'json-loader'},
+      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
     ],
   },
   resolve: {
@@ -60,7 +63,8 @@ module.exports = {
     new ExtractTextPlugin("main.css"),
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
-    })
+    }),
+    new HtmlWebpackPlugin({minify:{}})
   ],
   devServer: {
     contentBase: './src',
