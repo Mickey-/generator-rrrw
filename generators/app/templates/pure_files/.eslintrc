@@ -1,9 +1,8 @@
-// 规则汇总：http://eslint.org/docs/rules/
 {
     "parserOptions": {
         "ecmaVersion": 6,
         "ecmaFeatures": {
-            "jsx": false
+            "jsx": true
         }
     },
     "rules": {
@@ -46,7 +45,6 @@
         "commonjs": true,
         "jquery": true
     },
-    // 如果有其他全局变量，可自行在对应js文件头部设置注释：/*global var1, var2*/
     "globals": {
         "$": true,
         "_": true,
@@ -57,5 +55,8 @@
         "React": false,
         "Highcharts": false,
     },
-    "extends": "eslint:recommended" //将按ECMAScript规范推荐的规则都merge进来
+    "plugins": [
+      "react"
+    ],
+    "extends": ["eslint:recommended", "plugin:react/recommended"]
 }
