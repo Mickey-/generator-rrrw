@@ -8,7 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 5959",
-    "build": "NODE_ENV=production webpack --config webpack.config.prod.js --progress --colors"
+    "build": "rm -rf dist/ && NODE_ENV=production webpack --config webpack.config.prod.js --progress --colors"
   },
   "dependencies": {
     "babel-core": "^6.5.2",
