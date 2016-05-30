@@ -15,7 +15,7 @@ gulp.task('static', function () {
       "parserOptions": {
         "ecmaVersion": 6,
         "ecmaFeatures": {
-            "jsx": false
+            "jsx": true
         }
       }   
     }))
