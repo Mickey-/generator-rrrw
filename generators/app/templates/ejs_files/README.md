@@ -11,6 +11,8 @@
 src/
 ├── index.html
 ├── index.js
+├── base.css        在normalize.css基础上，业务定制的基础样式
+├── assets/         图片等静态资源，可直接放在assets，不用另建images之类的目录
 ├── actions/
 ├── components/     业务组件
 ├── constants/      统一导出一些必要的常量

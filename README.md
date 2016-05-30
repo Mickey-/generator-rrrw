@@ -24,6 +24,8 @@ There is a TodoMVC demo in ```src/```, after ```npm start``` we can open [http:/
 src/
 ├── index.html
 ├── index.js
+├── base.css 
+├── assets/
 ├── actions/
 ├── components/     
 ├── constants/      
