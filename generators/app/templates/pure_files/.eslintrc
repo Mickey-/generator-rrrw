@@ -1,0 +1,61 @@
+// 规则汇总：http://eslint.org/docs/rules/
+{
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "jsx": false
+        }
+    },
+    "rules": {
+        // Possible Errors
+        "comma-dangle": [2, "never"],
+        "no-console": 0,
+        "no-debugger": 1,
+        "no-extra-semi": 0,
+        "no-inner-declarations": 2,
+        "no-regex-spaces": 1,
+        "valid-typeof": 2,
+
+        // Best Practices
+        "default-case": 1,
+        "no-eq-null": 2,
+        "no-implied-eval": 2,
+        "no-invalid-this": 1,
+        "no-multi-spaces": [1, {
+            exceptions: {
+                "VariableDeclarator": true,
+                "ImportDeclaration": true
+            }
+        }],
+        "no-with": 2,
+
+        // other
+        "comma-spacing": [1, {
+            "before": false,
+            "after": true
+        }],
+        "space-infix-ops": [2, {"int32Hint": true}],
+        "indent": [2, 2, {"SwitchCase": 1}],
+        "linebreak-style": [2, "unix"]
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true,
+        "amd": true,
+        "commonjs": true,
+        "jquery": true
+    },
+    // 如果有其他全局变量，可自行在对应js文件头部设置注释：/*global var1, var2*/
+    "globals": {
+        "$": true,
+        "_": true,
+        "jQuery": false,
+        "Zepto": false,
+        "Angular": false,
+        "Backbone": false,
+        "React": false,
+        "Highcharts": false,
+    },
+    "extends": "eslint:recommended" //将按ECMAScript规范推荐的规则都merge进来
+}

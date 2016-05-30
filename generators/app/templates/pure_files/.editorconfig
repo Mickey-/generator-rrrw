@@ -1,0 +1,23 @@
+# 子目录可放子级editorconfig
+root = true
+
+[*]
+indent_style = space
+# 缩进配置可改，可选值2或4
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+# 避免一些无意义的diff
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{html,htm,vm,tpl}]
+indent_size = 2
+insert_final_newline = false
+
+[**.md]
+# 考虑markdown的特殊语法
+trim_trailing_whitespace = false
+insert_final_newline = false
+indent_size = 4
+
