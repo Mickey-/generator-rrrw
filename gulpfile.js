@@ -11,14 +11,7 @@ var plumber = require('gulp-plumber');
 gulp.task('static', function () {
   return gulp.src('generators/app/templates/**/*.js')
     .pipe(excludeGitignore())
-    .pipe(eslint({
-      "parserOptions": {
-        "ecmaVersion": 6,
-        "ecmaFeatures": {
-            "jsx": true
-        }
-      }   
-    }))
+    .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
 });
