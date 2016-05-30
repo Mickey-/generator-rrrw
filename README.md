@@ -16,6 +16,50 @@ Then generate your new project:
 yo rrrw
 ```
 
+## Directory
+
+There is a TodoMVC demo in ```src/```, after ```npm start``` we can open [http://localhost:5959/](http://localhost:5959/) run the demo    
+
+```
+src/
+├── index.html
+├── index.js
+├── actions/
+├── components/     
+├── constants/      
+├── containers/
+├── middleware/     
+├── reducers/
+└── store/
+```
+
+## Contains
+
+- [x] [React](https://facebook.github.io/react/)
+- [x] [Redux](https://github.com/reactjs/redux)
+- [x] [React Router Redux](https://github.com/reactjs/react-router-redux)
+- [x] [Webpack](https://webpack.github.io)
+- [x] [Redux DevTools Extension](https://github.com/zalmoxisus/redux-devtools-extension)
+- [x] [Babel](https://babeljs.io/)
+- [x] [Autoprefixer](https://github.com/postcss/autoprefixer)
+- [x] [PostCSS](https://github.com/postcss/postcss)
+- [x] [CSS modules](https://github.com/outpunk/postcss-modules)
+- [x] TodoMVC demo
+- [ ] Anything else? welcome contribute!
+
+## Watch & Hot Module Replace
+
+```
+$ npm start
+```
+
+## production build
+
+```
+$ npm run build
+```
+
+
 ## Getting To Know Yeoman
 
  * Yeoman has a heart of gold.
