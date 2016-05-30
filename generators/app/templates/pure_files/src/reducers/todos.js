@@ -36,7 +36,7 @@ export default handleActions({
     })
   },
 
-  'complete all' (state, action) {
+  'complete all' (state) {
     const areAllMarked = state.every(todo => todo.completed)
     return state.map(todo => {
       return {
@@ -46,7 +46,7 @@ export default handleActions({
     })
   },
 
-  'clear complete' (state, action) {
+  'clear complete' (state) {
     return state.filter(todo => todo.completed === false)
   }
 }, initialState)

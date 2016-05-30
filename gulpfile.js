@@ -9,9 +9,16 @@ var nsp = require('gulp-nsp');
 var plumber = require('gulp-plumber');
 
 gulp.task('static', function () {
-  return gulp.src('generators/**/*.js')
+  return gulp.src('generators/app/templates/**/*.js')
     .pipe(excludeGitignore())
-    .pipe(eslint())
+    .pipe(eslint({
+      "parserOptions": {
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "jsx": false
+        }
+      }   
+    }))
     .pipe(eslint.format())
     .pipe(eslint.failAfterError());
 });

@@ -19,7 +19,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, './dist'),
-    filename: 'bundle.js',
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
@@ -37,7 +37,7 @@ module.exports = {
       },
       {test: /\.json$/, loader: 'json-loader'},
       {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192&name=[name]_[hash:5].[ext]'}
-    ],
+    ]
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
