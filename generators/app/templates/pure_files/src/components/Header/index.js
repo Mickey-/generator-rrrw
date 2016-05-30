@@ -14,7 +14,9 @@ class Header extends Component {
     return (
       <header>
         <h1>TODOS</h1>
+        <img src="/assets/592.png"/>
         <Link to="/" style={{marginRight:"30px"}}>home</Link>
+        <img src="/assets/592.png"/>
         <Link to="/header">header</Link>
         <TodoTextInput
           newTodo
