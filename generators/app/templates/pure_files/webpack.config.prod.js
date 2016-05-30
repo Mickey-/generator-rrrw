@@ -20,6 +20,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, './dist'),
     filename: 'bundle.[hash:5].js',
+    publicPath: 'http://localhost/'  //TODO modify to http://fecdn.59store.com/
   },
   module: {
     loaders: [
@@ -36,7 +37,7 @@ module.exports = {
         ]
       },
       {test: /\.json$/, loader: 'json-loader'},
-      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
+      {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192&name=[name]_[hash:5].[ext]'}
     ],
   },
   resolve: {

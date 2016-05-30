@@ -36,7 +36,7 @@ module.exports = {
         ]
       },
       {test: /\.json$/, loader: 'json-loader'},
-      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
+      {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192&name=[name]_[hash:5].[ext]'}
     ],
   },
   resolve: {
