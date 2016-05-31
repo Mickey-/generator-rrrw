@@ -1,5 +1,5 @@
 # generator-rrrw [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> react+redux+react-redux-router+webpack(with babel,es6)
+> yeoman generator with react,redux,react-redux-router,webpack,babel,es6,autoprefixer,HMR,css-module
 
 ## Installation
 
