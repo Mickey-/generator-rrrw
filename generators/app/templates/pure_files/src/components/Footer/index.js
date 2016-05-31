@@ -63,10 +63,10 @@ class Footer extends Component {
 }
 
 Footer.propTypes = {
-    activeCount: PropTypes.number,
-    filter: PropTypes.string,
-    onShow: PropTypes.func,
-    completedCount: PropTypes.number,
-    onClearCompleted: PropTypes.func
+  activeCount: PropTypes.number,
+  filter: PropTypes.string,
+  onShow: PropTypes.func,
+  completedCount: PropTypes.number,
+  onClearCompleted: PropTypes.func
 }
 export default Footer
