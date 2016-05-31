@@ -19,9 +19,9 @@ class App extends Component {
   }
 }
 App.propTypes = {
-    todos: PropTypes.array,
-    actions: PropTypes.object,
-    children: PropTypes.node
+  todos: PropTypes.array,
+  actions: PropTypes.object,
+  children: PropTypes.node
 }
 
 function mapStateToProps(state) {
