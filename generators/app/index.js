@@ -17,13 +17,13 @@ module.exports = yeoman.Base.extend({
     var prompts = [{
       type    : 'input',
       name    : 'repo',
-      message : '请输入仓库名称(不能有空格和大写字母)',
+      message : '请输入Git仓库名称(不能有空格和大写字母)',
       default : this.env.cwd.split('/').pop() // Default 当前目录名
     }, {
       type    : 'input',
       name    : 'product',
       message : '请输入产品中文名称（如：店长PC Web后台系统）',
-      default : '59store大前端' 
+      default : '59store大前端'
     }, {
       type    : 'input',
       name    : 'users',
