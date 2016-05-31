@@ -1,5 +1,4 @@
-
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../constants/filters'
 import classnames from 'classnames'
 import style from './style.css'
@@ -63,4 +62,11 @@ class Footer extends Component {
   }
 }
 
+Footer.propTypes = {
+    activeCount: PropTypes.number,
+    filter: PropTypes.string,
+    onShow: PropTypes.func,
+    completedCount: PropTypes.number,
+    onClearCompleted: PropTypes.func
+}
 export default Footer
