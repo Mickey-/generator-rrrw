@@ -7,7 +7,7 @@ var fs = require('fs');
 module.exports = yeoman.Base.extend({
   initializing: function() {
     this.log(yosay(
-      'Welcome to ' + chalk.cyan('59store rrrw generator') + ', it builds with ' + chalk.red('react,redux,react-redux-router,webpack,babel,es6,autoprefixer,hmr,css-module   ') + 'and so on'
+      'Welcome to ' + chalk.cyan('59store rrrw generator') + ', it builds with ' + chalk.red('react,redux,react-redux-router,webpack,babel,es6,autoprefixer,HMR,css-module   ') + 'and so on'
     ));
 
   },
