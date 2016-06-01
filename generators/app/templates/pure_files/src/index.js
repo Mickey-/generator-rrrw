@@ -6,7 +6,7 @@ import { Router, Route, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { Provider } from 'react-redux'
 
-import RouteTest from './components/routetest'
+import RouteTest from './components/RouteTest'
 import App from './containers/App'
 import createStore from './store'
 
