@@ -1,5 +1,4 @@
 var webpack = require('webpack'),
-  ExtractTextPlugin = require('extract-text-webpack-plugin'),
   autoprefixer = require('autoprefixer'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   path = require('path')
@@ -25,7 +24,7 @@ module.exports = {
     loaders: [
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&camelCase&importLoaders=1&localIdentName=[local]__[hash:base64:5]!postcss-loader')
+        loader: 'style-loader!css-loader?modules&camelCase&importLoaders=1&localIdentName=[local]__[hash:base64:5]!postcss-loader'
       },
       {
         test: /\.(js|jsx)$/,
@@ -49,7 +48,6 @@ module.exports = {
   ],
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('lib', 'lib.js'),
-    new ExtractTextPlugin("bundle.css"),
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
     }),
