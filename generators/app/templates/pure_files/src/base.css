@@ -31,4 +31,6 @@ input[type="checkbox"] {
   outline: none;
 }
 
-
+b, strong {
+  font-weight: bold;
+}
