@@ -12,6 +12,9 @@ class Header extends Component {
   }
 
   render() {
+    const style = {
+      marginRight: "30px"
+    }
     return (
       <header>
         <h1>
@@ -19,8 +22,9 @@ class Header extends Component {
           TODOS
           <img src={img592}/>
         </h1>
-        <Link to="/" style={{marginRight:"30px"}}>home</Link>
-        <Link to="/routetest">routetest</Link>
+        <Link to="/" style={style}>home</Link>
+        <Link to="/routetest" style={style}>routetest</Link>
+        <a href="http://ant.design/#/components/menu" target="_blank"><b>组件请使用AntDesign，如布局导航</b></a>
         <TodoTextInput
           newTodo
           onSave={::this.handleSave}
