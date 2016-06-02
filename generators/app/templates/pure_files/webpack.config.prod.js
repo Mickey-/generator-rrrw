@@ -19,7 +19,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, './dist'),
-    filename: 'bundle.[hash:5].js',
+    filename: '[name].[hash:5].js',
     publicPath: 'http://localhost/'  //TODO modify to http://fecdn.59store.com/
   },
   module: {
@@ -50,7 +50,7 @@ module.exports = {
   ],
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('lib', 'lib.[hash:5].js'),
-    new ExtractTextPlugin("bundle.[hash:5].css"),
+    new ExtractTextPlugin("[name].[hash:5].css"),
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
     }),
