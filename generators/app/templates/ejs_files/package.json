@@ -18,6 +18,8 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "css-loader": "^0.23.1",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
     "postcss-loader": "^0.8.1",
     "style-loader": "^0.13.0",
     "file-loader": "^0.8.5",

@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import TodoItem from '../TodoItem'
 import Footer from '../Footer'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../constants/filters'
-import style from './style.css'
+import style from './style.less'
 
 const TODO_FILTERS = {
   [SHOW_ALL]: () => true,
