@@ -1,5 +1,5 @@
 import 'normalize.css/normalize.css'
-import './base.css'
+import './base.less'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, browserHistory } from 'react-router'
