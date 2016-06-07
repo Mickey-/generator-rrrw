@@ -23,6 +23,10 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.less$/,
+        loader: 'style-loader!css-loader?modules&camelCase&importLoaders=1&localIdentName=[local]__[hash:base64:5]!postcss-loader!less-loader'
+      },
+      {
         test: /\.css$/,
         loader: 'style-loader!css-loader?modules&camelCase&importLoaders=1&localIdentName=[local]__[hash:base64:5]!postcss-loader'
       },
