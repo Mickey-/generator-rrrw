@@ -71,7 +71,14 @@ module.exports = yeoman.Base.extend({
     this.directory(
       this.templatePath('pure_files/'),
       this.destinationPath()
-    );
+    )
+
+    // 修正npm， https://github.com/npm/npm/issues/1862
+    var niPath = this.templatePath('pure_files/.npmignore')
+    this.copy(
+      (this.fs.exists(niPath) ? niPath : this.templatePath('.gitignore')),
+      this.destinationPath('.gitignore')
+    )
   },
 
   install: function () {
