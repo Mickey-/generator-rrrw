@@ -1,6 +1,6 @@
 {
   "name": "generator-rrrw",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "react,redux,react-redux-router,webpack,babel,es6,autoprefixer,HMR,css-module",
   "homepage": "https://github.com/Mickey-/generator-rrrw",
   "author": {
