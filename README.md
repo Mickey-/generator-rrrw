@@ -69,6 +69,10 @@ $ npm run build
  * Yeoman can be too opinionated at times but is easily convinced not to be.
  * Feel free to [learn more about Yeoman](http://yeoman.io/).
 
+## Attention
+
+If you need to support IE9/IE10, please add ```['transform-es2015-classes', {loose: true}]``` in __.babelrc__ in __plugins__ fields
+
 ## License
 
 Apache-2.0 © [半边](https://github.com/Mickey-/)
