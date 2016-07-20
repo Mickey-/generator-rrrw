@@ -35,6 +35,11 @@ src/
 └── store/
 ```
 
+## Attention
+
+If you need to support IE9/IE10:    
+please add ```['transform-es2015-classes', {loose: true}]``` in __.babelrc__ in __plugins__ fields
+
 ## Contains
 
 - [x] [React](https://facebook.github.io/react/)
@@ -68,10 +73,6 @@ $ npm run build
  * Yeoman is a person with feelings and opinions, but is very easy to work with.
  * Yeoman can be too opinionated at times but is easily convinced not to be.
  * Feel free to [learn more about Yeoman](http://yeoman.io/).
-
-## Attention
-
-If you need to support IE9/IE10, please add ```['transform-es2015-classes', {loose: true}]``` in __.babelrc__ in __plugins__ fields
 
 ## License
 
