@@ -38,7 +38,7 @@ src/
 ## Attention
 
 If you need to support IE9/IE10:    
-please add ```['transform-es2015-classes', {loose: true}]``` in __.babelrc__ in __plugins__ fields
+After generate project，we need to add ```['transform-es2015-classes', {loose: true}]``` in __.babelrc__ in __plugins__ fields
 
 ## Contains
 
