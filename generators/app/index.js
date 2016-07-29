@@ -15,6 +15,11 @@ module.exports = yeoman.Base.extend({
   prompting: function () {
     // Have Yeoman greet the user.
     var prompts = [{
+      type    : 'list',
+      name    : 'mobileORpc',
+      message : '是PC项目还是移动应用？',
+      choices : ['PC', 'Mobile']
+    }, {
       type    : 'input',
       name    : 'repo',
       message : '请输入Git仓库名称(不能有空格和大写字母)',
