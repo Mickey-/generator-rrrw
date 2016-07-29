@@ -6,6 +6,7 @@ var fs = require('fs');
 
 module.exports = yeoman.Base.extend({
   initializing: function() {
+
     this.log(yosay(
       'Welcome to ' + chalk.cyan('59store rrrw generator') + ', it builds with ' + chalk.red('react,redux,react-redux-router,webpack,babel,es6,autoprefixer,HMR,css-module   ') + 'and so on'
     ));
@@ -62,17 +63,30 @@ module.exports = yeoman.Base.extend({
   },
 
   writing: function () {
-    var compilePath = this.templatePath('ejs_files/'),
+    var compilePath = this.templatePath(),
       files = fs.readdirSync(compilePath)
+    console.log(this.props)
 
-    for(var i = 0; i < files.length; i++) {
+        /*
+    console.log(compilePath)
+    console.log(this.templatePath())
+    console.log(this.templatePath(compilePath))
+    console.log(this.destinationPath())
+    process.exit(1)
+    */
+    //for(var i = 0; i < files.length; i++) {
       this.fs.copyTpl(
-        this.templatePath(compilePath),
+        this.templatePath(),
         this.destinationPath(),
         this.props
       )
-    }
+      this.fs.copy(
+        this.templatePath('./.*'),
+        this.destinationRoot()
+      )
+    //}
 
+    /*
     this.directory(
       this.templatePath('pure_files/'),
       this.destinationPath()
@@ -84,6 +98,7 @@ module.exports = yeoman.Base.extend({
       (this.fs.exists(niPath) ? niPath : this.templatePath('.gitignore')),
       this.destinationPath('.gitignore')
     )
+    */
   },
 
   install: function () {

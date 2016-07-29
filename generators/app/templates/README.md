@@ -3,7 +3,7 @@
 
 - 面向用户： <%= users %>
 
-<% if (mobileORpc == 'mobile') { %>
+<% if (mobileORpc == 'Mobile') { %>
 因为是移动端项目，整个应用基于[MSUI - Mobile 59Store UI](http://swallow.59store.net:2333/msui/docs/) 的组件模块包支持    
 React 挂载节点div#root 会带有一个classname m-base-window,样式会依赖m-base
 
@@ -33,7 +33,7 @@ src/
 ## 涉及技术栈 (RRRW)
 
 - [x] [React](https://facebook.github.io/react/)
-<% if (mobileORpc == 'mobile') { %>
+<% if (mobileORpc == 'Mobile') { %>
 - [x] __[MSUI - Mobile 59Store UI](http://swallow.59store.net:2333/msui/docs/)__
 <% } %>
 - [x] [Redux](https://github.com/reactjs/redux)

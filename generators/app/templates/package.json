@@ -11,10 +11,8 @@
     "build": "rm -rf dist/ && NODE_ENV=production webpack --config webpack.config.prod.js --progress --colors"
   },
   "dependencies": {
-    <% if (mobileORpc == 'mobile') { %>
-    "m-base": "^1.0.5",
-    "fastclick": "~1.0.6",
-    <% } else { %>
+    <% if (mobileORpc == 'Mobile') { %>"m-base": "^1.0.5",
+    "fastclick": "~1.0.6",<% } else { %>
     "normalize.css": "^4.1.1",
     <% } %>
     "babel-core": "^6.5.2",

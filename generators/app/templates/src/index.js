@@ -1,9 +1,7 @@
-<% if (mobileORpc == 'pc') { %>
-  import 'normalize.css/normalize.css'
-<% } else { %>
-  import 'm-base/index.less'
-  import FastClick from 'fastclick'
-  FastClick.attach(document.body)
+<% if (mobileORpc == 'PC') { %>import 'normalize.css/normalize.css'
+<% } else { %>import 'm-base/index.less'
+import FastClick from 'fastclick'
+FastClick.attach(document.body)
 <% } %>
 import './base.less'
 import React from 'react'
