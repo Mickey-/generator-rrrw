@@ -65,16 +65,7 @@ module.exports = yeoman.Base.extend({
   writing: function () {
     var compilePath = this.templatePath(),
       files = fs.readdirSync(compilePath)
-    console.log(this.props)
 
-        /*
-    console.log(compilePath)
-    console.log(this.templatePath())
-    console.log(this.templatePath(compilePath))
-    console.log(this.destinationPath())
-    process.exit(1)
-    */
-    //for(var i = 0; i < files.length; i++) {
       this.fs.copyTpl(
         this.templatePath(),
         this.destinationPath(),
@@ -84,14 +75,7 @@ module.exports = yeoman.Base.extend({
         this.templatePath('./.*'),
         this.destinationRoot()
       )
-    //}
-
     /*
-    this.directory(
-      this.templatePath('pure_files/'),
-      this.destinationPath()
-    )
-
     // 修正npm， https://github.com/npm/npm/issues/1862
     var niPath = this.templatePath('pure_files/.npmignore')
     this.copy(
