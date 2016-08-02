@@ -35,6 +35,11 @@ src/
 └── store/
 ```
 
+## Attention
+
+If you need to support IE9/IE10:    
+After generate project，we need to add ```['transform-es2015-classes', {loose: true}]``` in __.babelrc__ in __plugins__ fields
+
 ## Contains
 
 - [x] [React](https://facebook.github.io/react/)

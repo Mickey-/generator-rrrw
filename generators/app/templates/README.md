@@ -3,9 +3,17 @@
 
 - 面向用户： <%= users %>
 
+<% if (mobileORpc == 'Mobile') { %>
+因为是移动端项目，整个应用基于[MSUI - Mobile 59Store UI](http://swallow.59store.net:2333/msui/docs/) 的组件模块包支持    
+React 挂载节点div#root 会带有一个classname m-base-window,样式会依赖m-base
+
+同时应用会引入Fastclick
+<% } %>
+
+
 ## 目录结构
 
-```src/```里含有一个TodoMVC的示例代码，可以跑```npm start```后在[http://localhost:5959/](http://localhost:5959/)查看Demo    
+```src/```里含有一个TodoMVC的示例代码，```npm start```后在[http://localhost:5959/](http://localhost:5959/)可查看Demo    
 
 ```
 src/
@@ -25,6 +33,9 @@ src/
 ## 涉及技术栈 (RRRW)
 
 - [x] [React](https://facebook.github.io/react/)
+<% if (mobileORpc == 'Mobile') { %>
+- [x] __[MSUI - Mobile 59Store UI](http://swallow.59store.net:2333/msui/docs/)__
+<% } %>
 - [x] [Redux](https://github.com/reactjs/redux)
 - [x] [React Router Redux](https://github.com/reactjs/react-router-redux)
 - [x] [Webpack](https://webpack.github.io)

@@ -6,6 +6,7 @@ var fs = require('fs');
 
 module.exports = yeoman.Base.extend({
   initializing: function() {
+
     this.log(yosay(
       'Welcome to ' + chalk.cyan('59store rrrw generator') + ', it builds with ' + chalk.red('react,redux,react-redux-router,webpack,babel,es6,autoprefixer,HMR,css-module   ') + 'and so on'
     ));
@@ -15,6 +16,11 @@ module.exports = yeoman.Base.extend({
   prompting: function () {
     // Have Yeoman greet the user.
     var prompts = [{
+      type    : 'list',
+      name    : 'mobileORpc',
+      message : '是PC项目还是移动应用？',
+      choices : ['PC', 'Mobile']
+    }, {
       type    : 'input',
       name    : 'repo',
       message : '请输入Git仓库名称(不能有空格和大写字母)',
@@ -57,21 +63,30 @@ module.exports = yeoman.Base.extend({
   },
 
   writing: function () {
-    var compilePath = this.templatePath('ejs_files/'),
+    var compilePath = this.templatePath(),
       files = fs.readdirSync(compilePath)
-
-    for(var i = 0; i < files.length; i++) {
       this.fs.copyTpl(
-        this.templatePath(compilePath),
+        this.templatePath(),
         this.destinationPath(),
         this.props
       )
-    }
-
-    this.directory(
-      this.templatePath('pure_files/'),
-      this.destinationPath()
-    );
+      this.fs.copy(
+        this.templatePath('./.*'),
+        this.destinationRoot()
+      )
+      this.fs.copyTpl(
+        this.templatePath('.babelrc'),
+        this.destinationPath('.babelrc'),
+        this.props
+      )
+    /*
+    // 修正npm， https://github.com/npm/npm/issues/1862
+    var niPath = this.templatePath('pure_files/.npmignore')
+    this.copy(
+      (this.fs.exists(niPath) ? niPath : this.templatePath('.gitignore')),
+      this.destinationPath('.gitignore')
+    )
+    */
   },
 
   install: function () {

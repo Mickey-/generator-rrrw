@@ -26,11 +26,23 @@ module.exports = {
     loaders: [
       {
         test: /\.less$/,
+        exclude: path.resolve(__dirname, './node_modules'),
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&minimize&camelCase&importLoaders=1&localIdentName=[local]__[hash:base64:5]!postcss-loader!less-loader')
       },
       {
         test: /\.css$/,
+        exclude: path.resolve(__dirname, './node_modules'),
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&minimize&camelCase&importLoaders=1&localIdentName=[local]__[hash:base64:5]!postcss-loader')
+      },
+      {
+        test: /\.less$/,
+        include: path.resolve(__dirname, './node_modules'),
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!less-loader')
+      },
+      {
+        test: /\.css$/,
+        include: path.resolve(__dirname, './node_modules'),
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
       },
       {
         test: /\.(js|jsx)$/,
@@ -45,11 +57,18 @@ module.exports = {
     ]
   },
   resolve: {
+    alias: {
+      'react': path.join(__dirname, 'node_modules', 'react')
+    },
     extensions: ['', '.js', '.jsx']
   },
   postcss: [
     autoprefixer({
-      browsers: [ 'Android >= 4', 'iOS > 6', 'last 10 Chrome versions', 'last 4 Firefox versions', 'Safari >= 6', 'ie > 8' ]
+      <% if (mobileORpc == 'Mobile') { %>
+      browsers: [ 'Android >= 4', 'iOS > 6', 'ChromeAndroid']
+      <% } else { %>
+      browsers: [ 'last 10 Chrome versions', 'last 5 Firefox versions', 'Safari >= 6', 'ie > 8' ]
+      <% } %>
     })
   ],
   plugins: [
@@ -61,10 +80,11 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: false,
-      unused: true,
-      dead_code: true,
-      warnings: false
+      compress: {
+        unused: true,
+        dead_code: true,
+        warnings: false
+      }
     }),
     new HtmlWebpackPlugin({
       minify: {},
