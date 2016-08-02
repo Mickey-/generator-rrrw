@@ -76,10 +76,11 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: false,
-      unused: true,
-      dead_code: true,
-      warnings: false
+      compress: {
+        unused: true,
+        dead_code: true,
+        warnings: false
+      }
     }),
     new HtmlWebpackPlugin({
       minify: {},
