@@ -14,6 +14,7 @@
     <% if (mobileORpc == 'Mobile') { %>"m-base": "^1.0.5",
     "fastclick": "~1.0.6",<% } else { %>
     "normalize.css": "^4.1.1",
+    "babel-plugin-antd": "~0.4.0",
     <% } %>
     "babel-core": "^6.5.2",
     "babel-loader": "^6.2.3",
@@ -40,8 +41,7 @@
     "react-router": "^2.0.0",
     "react-router-redux": "^4.0.0",
     "redux": "^3.3.1",
-    "redux-actions": "^0.9.1",
-    "babel-plugin-antd": "~0.4.0"
+    "redux-actions": "^0.9.1"
   },
   "devDependencies": {
     "webpack": "^1.12.14",
