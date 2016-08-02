@@ -64,7 +64,11 @@ module.exports = {
   },
   postcss: [
     autoprefixer({
-      browsers: [ 'Android >= 4', 'iOS > 6', 'last 10 Chrome versions', 'last 4 Firefox versions', 'Safari >= 6', 'ie > 8' ]
+      <% if (mobileORpc == 'Mobile') { %>
+      browsers: [ 'Android >= 4', 'iOS > 6', 'ChromeAndroid']
+      <% } else { %>
+      browsers: [ 'last 10 Chrome versions', 'last 5 Firefox versions', 'Safari >= 6', 'ie > 8' ]
+      <% } %>
     })
   ],
   plugins: [
