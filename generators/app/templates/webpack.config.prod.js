@@ -57,6 +57,9 @@ module.exports = {
     ]
   },
   resolve: {
+    alias: {
+      'react': path.join(__dirname, 'node_modules', 'react')
+    },
     extensions: ['', '.js', '.jsx']
   },
   postcss: [
