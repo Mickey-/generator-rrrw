@@ -65,7 +65,6 @@ module.exports = yeoman.Base.extend({
   writing: function () {
     var compilePath = this.templatePath(),
       files = fs.readdirSync(compilePath)
-
       this.fs.copyTpl(
         this.templatePath(),
         this.destinationPath(),
@@ -74,6 +73,11 @@ module.exports = yeoman.Base.extend({
       this.fs.copy(
         this.templatePath('./.*'),
         this.destinationRoot()
+      )
+      this.fs.copyTpl(
+        this.templatePath('.babelrc'),
+        this.destinationPath('.babelrc'),
+        this.props
       )
     /*
     // 修正npm， https://github.com/npm/npm/issues/1862
